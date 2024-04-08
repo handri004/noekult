@@ -47,6 +47,44 @@
                 <span class="text-logo"><i class="bi bi-droplet"></i> Footprint</span> <span style="font-size: 35px;">App</span>
                 </a>
               </h1>
+              {% if current_user.is_authenticated %}
+              <nav>
+                <ul>
+                    <li>
+                      <a href="{{url_for('users.logout')}}">Logout</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('home.home_home')}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('methodology.methodology_home')}}">Methology</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('carbon_app.carbon_app_home')}}">Carbon App</a>
+                    </li>
+                </ul>
+              </nav> 
+              {% else %}
+              <nav>
+                <ul>
+                    <li>
+                      <a href="{{url_for('users.register')}}">Register</a>
+                    </li>
+                    <li>
+                      <a href="{{url_for('users.login')}}">Login</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('home.home_home')}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('methodology.methodology_home')}}">Methology</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('carbon_app.carbon_app_home')}}">Carbon App</a>
+                    </li>
+                </ul>
+              </nav>
+              {% endif %}
               <div class="carbon_app_navbar_ul">
                 <ul>
                     <li>
